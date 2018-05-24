@@ -17,7 +17,7 @@
   </modules>
 
   <name>rt</name>
-  <url>https://github.com/roytian</url>
+  <url>https://github.com/roytian1217</url>
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
