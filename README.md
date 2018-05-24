@@ -25,6 +25,8 @@ UI 基于 bootstrap charisma http://usman.it/themes/charisma/index.html<br>
 1.执行数据库脚本：/rt_um.sql（um即 unite management 统一管理的意思，在我们这里就是操作权限库）<br>
 2.修改rt-mag下 application-dev.properties 中的um数据库链接 um.jdbc，其中web.jdbc是预留给业务库的数据库链接，我们这里非必须<br>
 3.打包、java -jar 运行<br>
+登陆页： localhost:8080/login/index<br>
+管理员账号密码：admin 123456<br>
 <br>
 **联系方式**<br>
 QQ 373119611 857258318
