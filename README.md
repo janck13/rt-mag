@@ -1,4 +1,5 @@
-目标：开箱即用的一套bootstrap UI管理后台，自带成熟的操作权限管理，让开发专注于后台业务功能开发<br>
+**目标**<br>
+开箱即用的一套bootstrap UI管理后台，自带成熟的操作权限管理，让开发专注于后台业务功能开发<br>
 <br>
 架构：spring boot2 + spring security + mybatis + mybatis plus<br>
  UI : bootstrap + custom jquery plugin<br>
@@ -7,7 +8,6 @@
 ![image](https://raw.githubusercontent.com/roytian1217/rt-mag/master/rt-mag/src/main/webapp/resource/images/readme/domain.png)
 <br>
 UI 基于 bootstrap charisma http://usman.it/themes/charisma/index.html<br>
-<br>
 兼容性IE8+<br>
 ![image](https://raw.githubusercontent.com/roytian1217/rt-mag/master/rt-mag/src/main/webapp/resource/images/readme/login.png)
 ![image](https://raw.githubusercontent.com/roytian1217/rt-mag/master/rt-mag/src/main/webapp/resource/images/readme/index.png)
