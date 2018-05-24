@@ -3,7 +3,7 @@
 架构：spring boot2 + spring security + mybatis + mybatis plus<br>
  UI : bootstrap + custom jquery plugin<br>
 <br>
-操作权限，细粒度到按钮、controller的action<br>
+操作权限，细粒度到操作按钮、controller的action<br>
 ![image](https://raw.githubusercontent.com/roytian1217/rt-mag/master/rt-mag/src/main/webapp/resource/images/readme/domain.png)
 <br>
 UI 基于 bootstrap charisma http://usman.it/themes/charisma/index.html<br>
