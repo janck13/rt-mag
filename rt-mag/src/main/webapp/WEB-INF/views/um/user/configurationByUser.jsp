@@ -45,7 +45,8 @@
                 onCheck: onCheck
             }
         };
-        setting.check.chkboxType = { "Y": "ps", "N": "ps" };
+        setting.check.chkboxType = { "Y": "p", "N": "s" };
+        setting.check.enable = true;
         $.fn.zTree.init($("#trees"), setting, zNodes);
     });
 </script>

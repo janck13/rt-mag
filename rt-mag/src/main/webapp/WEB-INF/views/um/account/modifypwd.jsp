@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@ taglib prefix="t" tagdir="/WEB-INF/tags"%>
-<%@ page import="demo.mag.property.AppProperty" %>
-<%@ page import="demo.mag.util.SpringContextUtil" %><%
+<%@ page import="com.rt.mag.property.AppProperty" %>
+<%@ page import="com.rt.mag.util.SpringContextUtil" %><%
     AppProperty appProperty = (AppProperty) SpringContextUtil.getBean(AppProperty.class);
     request.setAttribute("__version", appProperty.getVersion());
     request.setAttribute("__basePath", request.getContextPath());

@@ -370,22 +370,41 @@ public class UserController extends BaseController {
     @RequestMapping(value = "configurationByUser", method = RequestMethod.GET)
     public String configurationByUser(HttpServletRequest request, Model model, String pUserId) throws Exception {
 
+        UserDetailVO curUser = Authentication.getCurrentUser();
+        //当前用户的权限树
+        List<Map<String, String>> curUserRoleList = userService.selectRoleMapByUserId(curUser.getId());
+        //查看用户的权限树
         List<Map<String, String>> userRoleList = userService.selectRoleMapByUserId(pUserId);
         List<Map<String, String>> listVO = new ArrayList<Map<String, String>>();
-        for (Map<String, String> map : userRoleList) {
-            Map<String, String> _map = new HashMap<String, String>();
-            _map.put("id", map.get("id").toString());
+        //listVO 是当前用户的所有权限项
+        for (Map<String, String> map : curUserRoleList) {
+            if(map.get("hasrole") != null ){
+                Map<String, String> _map = new HashMap<String, String>();
+                //设置权限树
+                _map.put("id", map.get("id").toString());
+                String pId = "0";
+                if (map.get("parentId") != null) {
+                    pId = map.get("parentId").toString();
+                }
+                _map.put("pId", pId);
+                _map.put("name", map.get("name").toString());
+                //			_map.put("open", map.get("hasrole") != null ? "true" : "false");
+                //			_map.put("checked", map.get("hasrole") != null ? "true" : "false");
+                _map.put("open", "false");
+                _map.put("checked", "false");
 
-            String pId = "0";
-            if (map.get("parentId") != null)
-                pId = map.get("parentId").toString();
-
-            _map.put("pId", pId);
-            _map.put("name", map.get("name").toString());
-            _map.put("open", map.get("hasrole") != null ? "true" : "false");
-            _map.put("checked", map.get("hasrole") != null ? "true" : "false");
-            listVO.add(_map);
+                for(Map<String,String> userMap:userRoleList){
+                    if(userMap.get("id").toString().equals(map.get("id").toString())){
+                        _map.replace("open", userMap.get("hasrole") != null ? "true" : "false");
+                        _map.replace("checked", userMap.get("hasrole") != null ? "true" : "false");
+                    }else{
+                        continue;
+                    }
+                }
+                listVO.add(_map);
+            }
         }
+
 
         JSONArray array = JSONArray.fromObject(listVO);
         model.addAttribute("treeJson", array.toString());

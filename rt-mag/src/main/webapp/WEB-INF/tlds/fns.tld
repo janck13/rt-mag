@@ -14,7 +14,7 @@
   <function>
     <description>获取枚举对应的值</description>
     <name>getText</name>
-    <function-class>demo.common.util.EnumUtil</function-class>
+    <function-class>com.rt.common.util.EnumUtil</function-class>
     <function-signature>java.lang.String getText(java.lang.String,java.lang.Object)</function-signature>
     <example>${fns:getText(className,value)}</example>
   </function>  
@@ -22,7 +22,7 @@
   <!--<function>-->
     <!--<description>获取枚举对应的值</description>-->
     <!--<name>getDesc</name>-->
-    <!--<function-class>demo.common.util.EnumUtil</function-class>-->
+    <!--<function-class>com.rt.common.util.EnumUtil</function-class>-->
     <!--<function-signature>java.lang.String getDesc(java.lang.String,java.lang.Object)</function-signature>-->
     <!--<example>${fns:getDesc(className,value)}</example>-->
   <!--</function>-->

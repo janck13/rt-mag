@@ -137,6 +137,7 @@
             <artifactId>rt-service</artifactId>
             <version>1.0.0.RELEASE</version>
         </dependency>
+
     </dependencies>
     <profiles>
         <profile>

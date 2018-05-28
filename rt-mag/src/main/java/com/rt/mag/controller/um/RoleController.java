@@ -1,5 +1,8 @@
 package com.rt.mag.controller.um;
 
+import com.rt.util.BeanMapperUtil;
+import com.rt.util.ServiceResult;
+import com.rt.util.StringUtil;
 import com.rt.dto.param.um.SysRolePagination;
 import com.rt.dto.um.SysRoleDTO;
 import com.rt.mag.controller.base.BaseController;
@@ -10,9 +13,6 @@ import com.rt.mag.vo.um.UserDetailVO;
 import com.rt.service.um.SysRoleOperationService;
 import com.rt.service.um.SysRoleService;
 import com.rt.service.um.SysUserRoleService;
-import com.rt.util.BeanMapperUtil;
-import com.rt.util.ServiceResult;
-import com.rt.util.StringUtil;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.slf4j.Logger;
@@ -61,27 +61,11 @@ public class RoleController extends BaseController{
     public String roleListPage(Model model, SysRolePagination pagination) throws Exception {
 
         UserDetailVO curUser = Authentication.getCurrentUser();
-//        CurrentUserDTO curUserDTO = BeanMapperUtil.map(curUser, CurrentUserDTO.class);
 
         pagination.setCurUserId(curUser.getId());
         pagination.setIsSuperAdmin(curUser.getIsSuperAdmin());
 
-
         roleService.getRoleList(pagination);
-
-
-//        if (!StringUtil.isBlank(name))
-//            conditions.put("name", name);
-//
-//        conditions.put("curUserId", curUser.getId());
-//        conditions.put("isSuperAdmin", 1); //curUser.getIsSuperAdmin() 角色列表不给行方开放，所以默认是超级管理员
-//        queryPgn.setCurPageNO(pPageIndex);
-//        queryPgn.setPageSize(pPageSize);
-//        queryPgn.toBePage();
-//        queryPgn.setConditions(conditions);
-//
-//        List<SysRoleDTO> list = roleService.getRoleList(queryPgn);
-//        int totalCount = roleService.getRoleListCount(queryPgn);
 
         List<SysRoleVO> listvo = BeanMapperUtil.mapList(pagination.getRecords(), SysRoleVO.class);
 
@@ -101,7 +85,7 @@ public class RoleController extends BaseController{
     @ResponseBody
     @RequestMapping(value = "editRoleInfo", method = RequestMethod.POST)
     public ServiceResult editRoleInfo(HttpServletRequest request,
-                                    @RequestBody String param) throws Exception {
+                                      @RequestBody String param) throws Exception {
 
         ServiceResult result = new ServiceResult();
         UserDetailVO curUser = Authentication.getCurrentUser();

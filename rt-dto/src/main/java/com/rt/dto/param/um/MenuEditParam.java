@@ -8,15 +8,15 @@ public class MenuEditParam implements  Serializable{
 	private static final long serialVersionUID = 5418836753699426021L;
 
 	private String id; 
-	//@NotBlank (message="{com.rt.demo.menu.name}")
+	//@NotBlank (message="{com.rt.com.rt.menu.name}")
 	private String name; 
-	//@NotBlank(message="{com.rt.demo.menu.categoryId}")
+	//@NotBlank(message="{com.rt.com.rt.menu.categoryId}")
 	private String parentId;
  
 	private Integer sequence; 
-//	@NotNull(message="com.rt.demo.menu.sequence")
+//	@NotNull(message="com.rt.com.rt.menu.sequence")
 	private Integer enabled; 
-//	@NotBlank(message="{com.rt.demo.menu.url}")
+//	@NotBlank(message="{com.rt.com.rt.menu.url}")
 	private String url;
  
 	private String icon;

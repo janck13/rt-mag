@@ -8,13 +8,13 @@ public class CategoryEditParam  implements  Serializable{
 
 	private String id; 
 	
-	//@NotBlank(message="{com.rt.demo.category.name}")
+	//@NotBlank(message="{com.rt.com.rt.category.name}")
 	private String name; 
-	//@NotBlank(message="{com.rt.demo.category.moduleId}")
+	//@NotBlank(message="{com.rt.com.rt.category.moduleId}")
 	private String moduleId;
  
 	private Integer sequence; 
-	//@NotNull(message="{com.rt.demo.category.sequence}")
+	//@NotNull(message="{com.rt.com.rt.category.sequence}")
 	private Integer enabled;  
  
 	private String icon;

@@ -410,6 +410,15 @@ public class SysUserService extends ServiceImpl<SysUserMapper,SysUser> {
     public List<Map<String,String>> selectRoleMapByUserId(String userId)throws Exception {
         //return userDAO.selectRoleByUserId(userId);
         List<UserFindRoleOperationDTO> dtoList =  baseMapper.selectRoleOperationListByUserId(userId);
+        SysUserDTO userDTO = baseMapper.getUserByUserId(userId);
+        //superAdmin should have all the operation
+        if (userDTO.getIsSuperAdmin() == 1) {
+            if (dtoList.size() > 0) {
+                for(UserFindRoleOperationDTO po:dtoList){
+                    po.setHasrole("true");
+                }
+            }
+        }
         List<Map<String, String>> mapList = new ArrayList<>();
         if (dtoList.size() > 0) {
             for(UserFindRoleOperationDTO po:dtoList){
